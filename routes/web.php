@@ -31,11 +31,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/conta/{numero1}/{numero2}/{operacao?}', [ContaController::class, 'soma']);
-Route::get('/conta/{numero1}/{numero2}/{operacao?}', [ContaController::class, 'subtracao']);
-Route::get('/conta/{numero1}/{numero2}/{operacao?}', [ContaController::class, 'multiplicacao']);
-Route::get('/conta/{numero1}/{numero2}/{operacao?}', [ContaController::class, 'divisao']);
-Route::get('/conta/{numero1}/{numero2}/{operacao?}', [ContaController::class, 'todos']);
+Route::get('/{numero1}/{numero2}/{operacao?}', [ContaController::class, 'operacao']);
+
 
 
 

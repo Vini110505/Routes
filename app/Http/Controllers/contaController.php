@@ -5,32 +5,47 @@ namespace App\Http\Controllers;
 
 class ContaController extends Controller{
 
-    public function soma(int $a, int $b, String $operacao = null) {
-        $resultado = $a + $b;
-        echo 'Soma: ' . $resultado;
-    }
-    public function subtracao(int $a, int $b, String $operacao = null) {
-        $resultado = $a - $b;
-        echo 'Subtração: ' . $resultado;
-    }
-    public function multiplicacao(int $a, int $b, String $operacao = null) {
-        $resultado = $a * $b;
-        echo 'Multiplicação: ' . $resultado;
-    }
-    public function divisao(int $a, int $b, String $operacao = null) {
-        $resultado = $a / $b;
-        echo 'Divisão: ' . $resultado;
-    }
-    
-    public function todos(int $a, int $b, String $operacao = null) {
-        $soma = $a + $b;
-        $subtracao = $a - $b;
-        $divisao = $a / $b;
-        $multiplicacao = $a * $b;
-        echo 'Soma: ' . $soma . '<br>';
-        echo 'Subtração: ' . $subtracao . '<br>';
-        echo 'Multiplicação: ' . $multiplicacao . '<br>';
-        echo 'Divisão: ' . $divisao . '<br>';
+    public function operacao( int $a, int $b, String $operacao = null) {
+        switch($operacao){
+            case '':
+                $soma = $a + $b;
+                $subtracao = $a - $b;
+                $multiplicacao = $a * $b;
+                $divisao = $a / $b;
+                echo 'Soma:' . $soma . '<br>'
+                . 'Subtração:' . $subtracao . '<br>'
+                . 'Multiplicação:' . $multiplicacao . '<br>'
+                . 'Divisação:' . $divisao . '<br>';
+                break;
+        
+            case 'soma':
+                $soma = $a + $b;
+        
+                echo 'Soma:' . $soma;
+        
+                break;
+            case 'subtracao':
+        
+                $subtracao = $a - $b;
+                echo 'Subtração:' . $subtracao;
+        
+                break;
+        
+            case 'multiplicacao':
+                $multiplicacao = $a * $b;
+        
+                echo 'Multiplicação:' . $multiplicacao;
+                break;
+        
+            case 'divisao':
+                $divisao = $a / $b;
+        
+                echo 'Divisação:' . $divisao;
+                break;
+            default:
+                echo 'Operação inválida';
+        
+         }
     }
     
 
